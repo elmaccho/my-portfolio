@@ -1,7 +1,7 @@
 const start = document.querySelector('.start')
 const startTitle = document.querySelector('.startTitle')
 const startText = document.querySelector('.startText')
-
+const blinkEl = document.querySelector('.blink')
 
 let TitleText = ["Cześć, jestem Maciej"]
 let TextText = ["Junior FrontEnd Developer"]
@@ -24,12 +24,11 @@ const OpenstartText = () => {
     startText.classList.add("startTextOpen")
     startText.textContent = TextText
 }
-
 const typewriter = () => {
-    startTitle.innerHTML = TitleText[0].substring(0,  textPosition) + "<span>\u25ae\</span>"
+    startTitle.innerHTML = TitleText[0].substring(0,  textPosition) + "<span class=\"blink\">\u25ae\</span>"
 
     if(textPosition++ != TitleText[0].length){
-        setTimeout(typewriter, 50)    
+        setTimeout(typewriter, 50)
     }
 }
 

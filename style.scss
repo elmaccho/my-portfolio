@@ -179,6 +179,21 @@ main div:nth-child(2n+1):not(:first-child){
     }
 }
 
+.blink{
+    animation-name: blink;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0%{
+        opacity: 100%;
+    }
+    50%{
+        opacity: 0%;
+    }
+}
+
 .background {
     position: fixed;
     width: 100vw;
@@ -303,7 +318,7 @@ main div:nth-child(2n+1):not(:first-child){
     }
 
     main{
-
+        padding: 100px 15px;
         .start{
             border-radius: unset;
             flex-direction: column;
@@ -312,7 +327,7 @@ main div:nth-child(2n+1):not(:first-child){
             padding: 35px 0;
             border-radius: 50px 120px 50px 120px;
             gap: 15px;
-            width: 90%;
+            width: 100%;
             box-sizing: border-box;
 
             .startImg{
@@ -336,11 +351,9 @@ main div:nth-child(2n+1):not(:first-child){
 }
 
 @media screen and (max-width: 480px){
-    body{
-    }
 
     main{
-
+        padding: 100px 0;
         .start{
             border-radius: unset;
             flex-direction: column;

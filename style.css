@@ -24,14 +24,15 @@ body {
 
 main {
   width: 100%;
-  padding: 100px 50px;
+  padding: 100px 0;
   z-index: 1;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
+  gap: 200px;
 }
 main .start {
   display: flex;
@@ -43,7 +44,7 @@ main .start {
   transform: translateX(200%);
   transition: 0.3s;
   background-color: rgba(18, 12, 34, 0.7058823529);
-  width: 95%;
+  width: 90%;
   margin-top: 50px;
   border-radius: 15% 500px 150px 50%;
 }
@@ -66,12 +67,15 @@ main .start .startText {
   top: 50%;
 }
 main .aboutMe {
-  margin-top: 220px;
-  width: 50%;
+  width: 70%;
   background-color: rgba(18, 12, 34, 0.6392156863);
   color: #c8c2d8;
   padding: 25px;
   border-radius: 25px 80px;
+  margin-right: 20%;
+}
+main .aboutMe h1 {
+  font-size: 50px;
 }
 main .aboutMe .aboutMeText {
   font-size: 25px;
@@ -85,13 +89,65 @@ main .aboutMe .aboutMeText a {
 main .aboutMe .aboutMeText a:hover {
   color: #676177;
 }
-
-main div:nth-child(2n+2) {
-  margin-right: auto;
+main .aboutMe .aboutMeText img {
+  width: 500px;
 }
-
-main div:nth-child(2n+1):not(:first-child) {
-  margin-left: auto;
+main .skills {
+  width: 70%;
+  background-color: rgba(18, 12, 34, 0.6392156863);
+  color: #c8c2d8;
+  padding: 25px 30px;
+  border-radius: 25px 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 20%;
+}
+main .skills h1 {
+  font-size: 50px;
+}
+main .skills .skillHeader {
+  font-size: 25px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 95%;
+}
+main .skills .skillBarBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+main .skills .skillBarBox .skillBar {
+  width: 90%;
+  height: 25px;
+  background-color: #120C22;
+  border-radius: 25px;
+  display: flex;
+  overflow: hidden;
+}
+main .skills .skillBarBox .skillBar .skill {
+  height: 25px;
+  width: auto;
+  border-radius: 25px 0 0 25px;
+}
+main .skills .skillBarBox .skillCounter {
+  font-size: 20px;
+}
+main .projects {
+  width: 100%;
+  background-color: #090515;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .projects h1 {
+  color: #c8c2d8;
+  font-size: 50px;
 }
 
 .startOpen {
@@ -154,6 +210,81 @@ main div:nth-child(2n+1):not(:first-child) {
     opacity: 0%;
   }
 }
+@keyframes html {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+@keyframes css {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 85%;
+  }
+}
+@keyframes javascript {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+@keyframes php {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 40%;
+  }
+}
+@keyframes wordpress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 20%;
+  }
+}
+.html {
+  animation-name: html;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  background-color: orange;
+}
+
+.css {
+  animation-name: css;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  background-color: rgb(0, 166, 255);
+}
+
+.javascript {
+  animation-name: javascript;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  background-color: yellow;
+}
+
+.php {
+  animation-name: php;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  background-color: #4e598c;
+}
+
+.wordpress {
+  animation-name: wordpress;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  background-color: #c8c2d8;
+}
+
 .background {
   position: fixed;
   width: 100vw;
@@ -309,6 +440,12 @@ main div:nth-child(2n+1):not(:first-child) {
     bottom: 25px;
     top: unset;
   }
+  main .skills {
+    width: 80%;
+  }
+  main .skills .skillBarBox .skillBar {
+    width: 80%;
+  }
 }
 @media screen and (max-width: 480px) {
   main {
@@ -321,7 +458,6 @@ main div:nth-child(2n+1):not(:first-child) {
     align-items: center;
     padding: 35px 0;
     border-radius: 50px 120px 50px 120px;
-    gap: 15px;
     width: 90%;
     box-sizing: border-box;
   }
@@ -338,5 +474,23 @@ main div:nth-child(2n+1):not(:first-child) {
     left: unset;
     bottom: 25px;
     top: unset;
+  }
+  main .aboutMe {
+    width: 80%;
+    margin-right: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .aboutMe .aboutMeText {
+    text-align: justify;
+  }
+  main .skills {
+    width: 80%;
+    margin-left: unset;
+  }
+  main .skills .skillBarBox .skillBar {
+    width: 80%;
   }
 }/*# sourceMappingURL=style.css.map */
